@@ -1,5 +1,5 @@
-interface treatedError extends Error {
-    status: number
-};
+interface TREATEDERROR extends Error {
+  status: number
+}
 
-export default treatedError;
+export default TREATEDERROR;

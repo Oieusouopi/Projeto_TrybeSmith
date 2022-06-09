@@ -1,3 +1,3 @@
 export default {
-    selectAllProducts: 'SELECT * FROM trybesmith.products'
-}
+  selectAllProducts: 'SELECT * FROM Trybesmith.Products',
+};

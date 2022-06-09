@@ -1,19 +1,19 @@
-import { Pool } from "mysql2/promise";
+import { Pool } from 'mysql2/promise';
 // import connection from "./connection";
-import Products from "../interfaces/products";
-import queries from "./queries";
+import Products from '../interfaces/products';
+import queries from './queries';
 
-class productsModel {
-    public connection: Pool;
+class ProductsModel {
+  public connection: Pool;
 
-    constructor(connection: Pool) {
-        this.connection = connection;
-    };
+  constructor(connection: Pool) {
+    this.connection = connection;
+  }
 
-    public async getAllProducts(): Promise<Products[]> {
-        const [result] = await this.connection.execute(queries.selectAllProducts);
-        return result as Products[]
-    }
-};
+  public async getAllProducts(): Promise<Products[]> {
+    const [result] = await this.connection.execute(queries.selectAllProducts);
+    return result as Products[];
+  }
+}
 
-export default productsModel;
+export default ProductsModel;

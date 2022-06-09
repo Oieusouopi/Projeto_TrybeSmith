@@ -1,17 +1,18 @@
-import Products from "../interfaces/products";
-import connection from "../models/connection";
-import productsModel from "../models/productsModel";
+import Products from '../interfaces/products';
+import connection from '../models/connection';
+import ProductsModel from '../models/productsModel';
 
-class productsService {
-    public productsModel: productsModel;
-    constructor() {
-        this.productsModel = new productsModel(connection);
-    };
+class ProductsService {
+  public productsModel: ProductsModel;
 
-    public async getAllProuducts(): Promise<Products[]> {
-        const products = await this.productsModel.getAllProducts();
-        return products;
-    };
-};
+  constructor() {
+    this.productsModel = new ProductsModel(connection);
+  }
 
-export default productsService;
+  public async getAllProuducts(): Promise<Products[]> {
+    const products = await this.productsModel.getAllProducts();
+    return products;
+  }
+}
+
+export default ProductsService;
