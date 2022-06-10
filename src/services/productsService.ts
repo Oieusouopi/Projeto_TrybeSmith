@@ -18,31 +18,31 @@ class ProductsService {
   }
 
   validName = (name: string) => {
-    if (!name) throw new Error(validMessageCode(HTTPCODE.BAD_REQUEST, MESSAGE.NAME_IS_REQUIRED));
+    if (!name) throw validMessageCode(HTTPCODE.BAD_REQUEST, MESSAGE.NAME_IS_REQUIRED);
     if (typeof name !== 'string') {
-      throw new Error(validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.AMOUNT_MUST_BE_STRING));
+      throw validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.NAME_MUST_BE_STRING);
     }
-    if (name.length < 2) {
-      throw new Error(validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.NAME_SIZE));
+    if (name.length <= 2) {
+      throw validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.NAME_SIZE);
     }
   };
 
   validAmount = (amount: string) => {
     if (!amount) {
-      throw new Error(validMessageCode(HTTPCODE.BAD_REQUEST, MESSAGE.AMOUNT_IS_REQUIRED));
+      throw validMessageCode(HTTPCODE.BAD_REQUEST, MESSAGE.AMOUNT_IS_REQUIRED);
     }
     if (typeof amount !== 'string') {
-      throw new Error(validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.AMOUNT_MUST_BE_STRING));
+      throw validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.AMOUNT_MUST_BE_STRING);
     }
-    if (amount.length < 2) {
-      throw new Error(validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.AMOUNT_SIZE));
+    if (amount.length <= 2) {
+      throw validMessageCode(HTTPCODE.UNPROCESSABLE, MESSAGE.AMOUNT_SIZE);
     } 
   };
 
   public async createProducts({ name, amount }: Products): Promise<Products> {
-    const products = await this.productsModel.createProduct({ name, amount });
     this.validName(name);
     this.validAmount(amount);
+    const products = await this.productsModel.createProduct({ name, amount });
     return products;
   }
 }
