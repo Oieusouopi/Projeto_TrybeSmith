@@ -1,9 +1,8 @@
 interface Products {
   id?: number,
-  username: string,
-  class: string,
-  level: number,
-  password: string,
+  name: string,
+  amount: string,
+  orderId?: number | null,
 }
 
 export default Products;

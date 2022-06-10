@@ -1,10 +1,8 @@
 import Express from 'express';
-import ProductsController from '../controllers/productsController';
+import routerProducts from './routerProducts';
 
 const router = Express.Router();
 
-const productsController = new ProductsController();
-
-router.use('/products', productsController.getAllProducts);
+router.use('/products', routerProducts);
 
 export default router;

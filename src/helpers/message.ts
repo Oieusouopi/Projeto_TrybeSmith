@@ -1,0 +1,25 @@
+enum MESSAGE {
+  NAME_IS_REQUIRED = '"name" is required',
+  NAME_MUST_BE_STRING = '"name" must be a string',
+  NAME_SIZE = '"name" length must be at least 3 characters long',
+  AMOUNT_IS_REQUIRED = '"amount" is required',
+  AMOUNT_MUST_BE_STRING = '"amount" must be a string',
+  AMOUNT_SIZE = '"amount" length must be at least 3 characters long',
+  USERNAME_IS_REQUIRED = '"username" is required',
+  USERNAME_MUST_BE_STRING = '"username" must be a string',
+  USERNAME_SIZE = '"username" length must be at least 3 characters long',
+  CLASSE_IS_REQUIRED = '"classe" is required',
+  CLASSE_MUST_BE_STRING = '"classe" must be a string',
+  CLASSE_SIZE = '"classe" length must be at least 3 characters long',
+  LEVEL_IS_REQUIRED = '"level" is required',
+  LEVEL_MUST_BE_NUMBER = '"level" must be a number',
+  LEVEL_SIZE = '"level" must be greater than or equal to 1',
+  PASSWORD_IS_REQURIED = '"password" is required',
+  PASSWORD_MUST_BE_STRING = '"password" must be a string',
+  PASSWORD_SIZE = '"password" length must be at least 8 characters long',
+  USERNAME_OR_PASSWORD_INVALID = 'Username or password invalid',
+  TOKEN_NOT_FOUND = 'Token not found',
+  TOKEN_INVALID = 'Invalid token',
+}
+
+export default MESSAGE;
